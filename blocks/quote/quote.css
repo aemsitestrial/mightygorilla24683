@@ -1,0 +1,45 @@
+.quote {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 32px;
+  text-align: center;
+}
+
+.quote blockquote {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #3d342d;
+}
+
+.quote blockquote::before {
+  content: "“";
+  display: block;
+  margin-bottom: 16px;
+  font-size: 4rem;
+  line-height: 0.5;
+  color: #9a6b45;
+}
+
+.quote .author {
+  margin-top: 24px;
+  font-weight: 700;
+  color: #3d342d;
+}
+
+.quote .role {
+  margin-top: 4px;
+  color: #766b63;
+  font-size: 0.9rem;
+}
+
+@media (width <= 600px) {
+  .quote {
+    padding: 48px 20px;
+  }
+
+  .quote blockquote {
+    font-size: 1.5rem;
+  }
+}
