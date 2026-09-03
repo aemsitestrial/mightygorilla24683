@@ -1,11 +1,11 @@
-.quote {
+.block.quote {
   max-width: 900px;
   margin: 0 auto;
   padding: 64px 32px;
   text-align: center;
 }
 
-.quote blockquote {
+.block.quote blockquote {
   margin: 0;
   font-family: Georgia, serif;
   font-size: 2rem;
@@ -13,7 +13,7 @@
   color: #3d342d;
 }
 
-.quote blockquote::before {
+.block.quote blockquote::before {
   content: "“";
   display: block;
   margin-bottom: 16px;
@@ -22,24 +22,24 @@
   color: #9a6b45;
 }
 
-.quote .author {
+.block.quote .author {
   margin-top: 24px;
   font-weight: 700;
   color: #3d342d;
 }
 
-.quote .role {
+.block.quote .role {
   margin-top: 4px;
   color: #766b63;
   font-size: 0.9rem;
 }
 
 @media (width <= 600px) {
-  .quote {
+  .block.quote {
     padding: 48px 20px;
   }
 
-  .quote blockquote {
+  .block.quote blockquote {
     font-size: 1.5rem;
   }
 }

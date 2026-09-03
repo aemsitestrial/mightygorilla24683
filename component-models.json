@@ -219,7 +219,7 @@
     "id": "quote",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "name": "quote",
         "label": "Quote",
         "valueType": "string"

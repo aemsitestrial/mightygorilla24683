@@ -1,5 +1,5 @@
 export default function decorate(block) {
-  const rows = [...block.children];
+  const rows = [block.children];
 
   const quote = rows[0]?.textContent.trim();
   const author = rows[1]?.textContent.trim();
