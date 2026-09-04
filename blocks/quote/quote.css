@@ -1,45 +1,106 @@
-.block.quote {
+.quote {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 64px 32px;
+  margin: 80px auto;
+  padding: 60px 40px;
+  box-sizing: border-box;
+
   text-align: center;
+  background-color: #f6f1e8;
+  border-radius: 12px;
 }
 
-.block.quote blockquote {
+/* Quote */
+.quote blockquote {
+  position: relative;
+
   margin: 0;
-  font-family: Georgia, serif;
-  font-size: 2rem;
+  padding: 0 40px;
+
+  color: #3b2a21;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  font-weight: 500;
+  font-style: italic;
   line-height: 1.4;
-  color: #3d342d;
 }
 
-.block.quote blockquote::before {
+/* Decorative quotation mark */
+.quote blockquote::before {
   content: "“";
-  display: block;
-  margin-bottom: 16px;
-  font-size: 4rem;
-  line-height: 0.5;
-  color: #9a6b45;
+
+  position: absolute;
+  top: -35px;
+  left: 0;
+
+  color: #a06b45;
+  font-size: 80px;
+  line-height: 1;
 }
 
-.block.quote .author {
-  margin-top: 24px;
+/* Author */
+.author {
+  margin-top: 30px;
+
+  color: #4a362b;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  color: #3d342d;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.block.quote .role {
-  margin-top: 4px;
-  color: #766b63;
-  font-size: 0.9rem;
+/* Decorative line above author */
+.quote .author::before {
+  content: "";
+
+  display: block;
+
+  width: 50px;
+  height: 2px;
+
+  margin: 0 auto 20px;
+
+  background-color: #a06b45;
 }
 
-@media (width <= 600px) {
-  .block.quote {
-    padding: 48px 20px;
+/* Role */
+.role {
+  margin-top: 5px;
+
+  color: #8a7568;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .quote {
+    margin: 40px 20px;
+    padding: 45px 20px;
   }
 
-  .block.quote blockquote {
-    font-size: 1.5rem;
+  .quote blockquote {
+    padding: 0 15px;
+    font-size: 26px;
+    line-height: 1.35;
+  }
+
+  .quote blockquote::before {
+    top: -25px;
+    left: -5px;
+    font-size: 60px;
+  }
+
+  .quote .author {
+    margin-top: 25px;
+    font-size: 14px;
+  }
+
+  .quote .role {
+    font-size: 13px;
   }
 }

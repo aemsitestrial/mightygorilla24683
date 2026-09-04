@@ -1,27 +1,37 @@
 export default function decorate(block) {
-  const rows = [block.children];
+  const rows = [...block.children];
 
-  const quote = rows[0]?.textContent.trim();
-  const author = rows[1]?.textContent.trim();
-  const role = rows[2]?.textContent.trim();
+  if (!rows.length) return;
 
-  block.innerHTML = '';
+  const cells = rows.length === 1
+    ? [...rows[0].children]
+    : rows.map((row) => row.firstElementChild);
 
-  const blockquote = document.createElement('blockquote');
-  blockquote.textContent = quote;
+  const quoteText = cells[0]?.textContent.trim() || "";
+  const author = cells[1]?.textContent.trim() || "";
+  const role = cells[2]?.textContent.trim() || "";
 
-  if (author) {
-    const authorElement = document.createElement('div');
-    authorElement.className = 'author';
-    authorElement.textContent = `— ${author}`;
-    block.append(authorElement);
-  }
+  // Clear original EDS content
+  block.textContent = "";
 
-  if (role) {
-    const roleElement = document.createElement('div');
-    roleElement.className = 'role';
-    roleElement.textContent = role;
-    block.prepend(blockquote);
-    block.append(roleElement);
-  }
+  // Quote
+  const blockquote = document.createElement("blockquote");
+  blockquote.textContent = quoteText;
+
+  // Author
+  const authorElement = document.createElement("div");
+  authorElement.className = "author";
+  authorElement.textContent = author;
+
+  // Role
+  const roleElement = document.createElement("div");
+  roleElement.className = "role";
+  roleElement.textContent = role;
+
+  // Add elements
+  block.append(
+    blockquote,
+    authorElement,
+    roleElement,
+  );
 }
